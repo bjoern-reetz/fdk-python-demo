@@ -1,0 +1,12 @@
+python hello world
+fastapi hello world
+uvicorn dev server
+curl demo
+
+path param, query param, body
+swagger ui demo
+
+fdk-python
+tl;dr: man kann jetzt den alten code wegschmeißen und alles nach-implementieren
+
+enter fdk-asgi (das hat so ein übermotivierter DWD-ler in seiner Freizeit geschrieben

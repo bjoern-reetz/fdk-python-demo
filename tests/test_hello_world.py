@@ -51,7 +51,19 @@ async def test_gimme_json_route():
 
 
 @pytest.mark.asyncio
-async def test_404s():
+async def test_path_param():
+    id_of_something = "foo-bar-baz"
+    call = await setup_fn_gateway_call(
+        handler, request_url=f"/get-something-by-id/{id_of_something}"
+    )
+    content, status, headers = await call
+
+    assert 200 == status
+    assert content == f'"maybe ID is {id_of_something}? ..oh dear"'
+
+
+@pytest.mark.asyncio
+async def test_errors():
     call = await setup_fn_gateway_call(
         handler, request_url="/does-not-exist", method="GET"
     )
